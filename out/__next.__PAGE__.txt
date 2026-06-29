@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[69137,["/_next/static/chunks/158myu8e_yme3.js","/_next/static/chunks/17s7x288m_36-.js"],"default"]
+3:I[97367,["/_next/static/chunks/158myu8e_yme3.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"style":{"background":"black","height":"100vh","paddingTop":20},"children":[["$","h1",null,{"style":{"color":"white","textAlign":"center"},"children":"Fog of War Maze"}],["$","$L2",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/17s7x288m_36-.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"R6Fa8uDNYbZHvOQ82_BH1"}
+5:null
