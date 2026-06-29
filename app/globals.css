@@ -35,8 +35,11 @@ body {
   align-items: center;
 
   /* IMPORTANT: prevents box fog clipping */
-  width: fit-content;
+  
   margin: auto;
+
+  width: 600px;
+  height: 600px;
 }
 
 /* canvas */
@@ -44,6 +47,12 @@ body {
   border: 2px solid white;
   background: black;
   display: block;
+  
+  width: 600px;
+  height: 600px;
+  display: block;
+  background: black;
+
 }
 
 /* UI */
