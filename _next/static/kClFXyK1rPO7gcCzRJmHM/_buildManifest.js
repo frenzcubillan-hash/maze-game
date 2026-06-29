@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/maze-game//_next/:path+",
+        "destination": "/maze-game/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
