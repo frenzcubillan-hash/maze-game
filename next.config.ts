@@ -1,17 +1,13 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-
 const nextConfig: NextConfig = {
-  output: "export",
-
   images: {
     unoptimized: true,
   },
-
-  basePath: isProd ? "/maze-game" : "",
-
-  trailingSlash: true,
 };
+module.exports = {
+  allowedDevOrigins: ['192.168.100.10']
+}
+
 
 export default nextConfig;
