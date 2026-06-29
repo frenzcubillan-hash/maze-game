@@ -24,3 +24,58 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* =========================
+   MAZE WRAPPER
+   ========================= */
+.maze-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* IMPORTANT: prevents box fog clipping */
+  width: fit-content;
+  margin: auto;
+}
+
+/* canvas */
+.maze-canvas {
+  border: 2px solid white;
+  background: black;
+  display: block;
+}
+
+/* UI */
+.ui {
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+}
+
+/* =========================
+   🌫️ FIXED TRUE RADIAL FOG
+   (NO BOX EFFECT ANYMORE)
+   ========================= */
+
+
+/* =========================
+   WIN SCREEN (FIXED OVERLAY)
+   ========================= */
+.win-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 30px;
+
+  /* ensures it matches canvas exactly */
+  pointer-events: auto;
+}
