@@ -1,13 +1,14 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
+
 const isProd = process.env.NODE_ENV === "production";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   output: "export",
+
   images: {
     unoptimized: true,
   },
 
-  // IMPORTANT for GitHub Pages
   basePath: isProd ? "/maze-game" : "",
 
   trailingSlash: true,
