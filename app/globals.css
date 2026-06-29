@@ -5,13 +5,6 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,25 +12,18 @@
   }
 }
 
-/* =========================
-   GLOBAL FIX (CENTERING ISSUE)
-   ========================= */
-html,
 body {
-  width: 100%;
-  height: 100%;
   margin: 0;
-}
-
-body {
+  padding: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 
-  /* FIX: center game properly */
+  /* FIX CENTERING */
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 /* =========================
@@ -48,44 +34,28 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin: auto;
-
-  width: 600px;
-  height: 600px;
 }
 
-/* =========================
-   CANVAS
-   ========================= */
+/* canvas */
 .maze-canvas {
   border: 2px solid white;
   background: black;
   display: block;
-
   width: 600px;
   height: 600px;
-
-  /* FIX: prevents blurry scaling issues */
-  image-rendering: pixelated;
 }
 
-/* =========================
-   UI
-   ========================= */
+/* UI */
 .ui {
   margin-top: 10px;
   color: white;
   text-align: center;
 }
 
-/* =========================
-   WIN SCREEN
-   ========================= */
+/* WIN OVERLAY */
 .win-overlay {
   position: absolute;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.85);
 
   display: flex;
@@ -95,6 +65,4 @@ body {
 
   color: white;
   font-size: 30px;
-
-  pointer-events: auto;
 }

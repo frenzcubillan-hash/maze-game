@@ -72,16 +72,16 @@ export default function MazeCanvas() {
   const lastMoveTime =
     useRef(0);
 
-  const goal = maze.realExit;
+  const goal = maze?.realExit;
 
-  const fakeGoals =
-    maze.destinations.filter(
-      (d) =>
-        !(
-          d.x === goal.x &&
-          d.y === goal.y
-        )
-    );
+const fakeGoals = maze?.destinations?.filter(
+  (d) =>
+    goal &&
+    !(
+      d.x === goal.x &&
+      d.y === goal.y
+    )
+) ?? [];
 
   function spawnKey() {
     let x = 0;
@@ -200,6 +200,7 @@ export default function MazeCanvas() {
   }
 
   function draw(ctx: CanvasRenderingContext2D) {
+    if (!maze || maze.length === 0) return;
     ctx.clearRect(
       0,
       0,
@@ -233,7 +234,7 @@ export default function MazeCanvas() {
         const id = `${x},${y}`;
         const d = light.get(id);
 
-        const visible = d !== undefined;
+        const visible = d !== undefined || (x === player.x && y === player.y);
 
         const px = x * CELL_SIZE;
         const py = y * CELL_SIZE;
