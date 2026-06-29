@@ -113,7 +113,13 @@ const fakeGoals = maze?.destinations?.filter(
 
     requestAnimationFrame(() => spawnKey());
   }
-
+function move(direction: "ArrowUp" | "ArrowDown" | "ArrowLeft" | "ArrowRight") {
+  window.dispatchEvent(
+    new KeyboardEvent("keydown", {
+      key: direction,
+    })
+  );
+}
   useEffect(() => {
     spawnKey();
   }, []);
@@ -405,23 +411,75 @@ const fakeGoals = maze?.destinations?.filter(
   }, [maze, key, goal, hasKey]);
 
   return (
-    <div className="maze-wrapper">
-      <canvas ref={canvasRef} className="maze-canvas" />
+  <div className="maze-wrapper">
+    <canvas
+      ref={canvasRef}
+      className="maze-canvas"
+    />
 
-      <div className="ui">
-        <button onClick={restartGame}>New Maze</button>
+    <div className="ui">
+      <button onClick={restartGame}>
+        New Maze
+      </button>
 
-        <div>{hasKey ? "Key: Found" : "Key: Missing"}</div>
-
-        <div>Exits: {maze.destinations.length}</div>
+      <div>
+        {hasKey
+          ? "Key: Found"
+          : "Key: Missing"}
       </div>
 
-      {won && (
-        <div className="win-overlay">
-          <div>You Escaped!</div>
-          <button onClick={restartGame}>Play Again</button>
-        </div>
-      )}
+      <div>
+        Exits: {maze.destinations.length}
+      </div>
     </div>
-  );
+
+    {/* MOBILE CONTROLS */}
+
+    <div className="mobile-controls">
+
+      <button
+        onPointerDown={() => move("ArrowUp")}
+      >
+        ▲
+      </button>
+
+      <div className="middle-row">
+
+        <button
+          onPointerDown={() => move("ArrowLeft")}
+        >
+          ◀
+        </button>
+
+        <button
+          onPointerDown={() => move("ArrowDown")}
+        >
+          ▼
+        </button>
+
+        <button
+          onPointerDown={() => move("ArrowRight")}
+        >
+          ▶
+        </button>
+
+      </div>
+
+    </div>
+
+    {won && (
+      <div className="win-overlay">
+        <div>
+          You Escaped!
+        </div>
+
+        <button
+          onClick={restartGame}
+        >
+          Play Again
+        </button>
+      </div>
+    )}
+  </div>
+);
 }

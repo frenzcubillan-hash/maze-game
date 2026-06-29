@@ -1,68 +1,174 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000;
+  --foreground: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000;
+    --foreground: #fff;
   }
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-
-  /* FIX CENTERING */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+*{
+  box-sizing:border-box;
 }
 
+html,
+body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  background:black;
+  overflow:hidden;
+  touch-action:none;
+}
+
+body{
+  background:var(--background);
+  color:var(--foreground);
+  font-family:Arial,Helvetica,sans-serif;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.maze-wrapper{
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  width:100vw;
+  height:100vh;
+}
+
+.maze-canvas{
+  display:block;
+
+  background:black;
+
+  border:2px solid white;
+
+  width:min(95vw,600px);
+  height:min(95vw,600px);
+
+  max-width:600px;
+  max-height:600px;
+}
+
+.ui{
+  margin-top:12px;
+
+  display:flex;
+  gap:15px;
+
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+
+  color:white;
+}
+
+button{
+  padding:8px 14px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.win-overlay{
+  position:absolute;
+  inset:0;
+
+  background:rgba(0,0,0,.85);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  color:white;
+  font-size:32px;
+
+  z-index:50;
+}
+
+@media (max-width:700px){
+
+  .maze-canvas{
+
+    width:95vw;
+    height:95vw;
+
+    max-width:95vw;
+    max-height:95vw;
+  }
+
+  .ui{
+
+    font-size:14px;
+  }
+
+  button{
+
+    font-size:15px;
+  }
+
+}
 /* =========================
-   MAZE WRAPPER
+   MOBILE CONTROLS
    ========================= */
-.maze-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.mobile-controls{
+  display:none;
 }
 
-/* canvas */
-.maze-canvas {
-  border: 2px solid white;
-  background: black;
-  display: block;
-  width: 600px;
-  height: 600px;
-}
+@media (max-width:768px){
 
-/* UI */
-.ui {
-  margin-top: 10px;
-  color: white;
-  text-align: center;
-}
+  .mobile-controls{
 
-/* WIN OVERLAY */
-.win-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    gap:12px;
 
-  color: white;
-  font-size: 30px;
+    margin-top:20px;
+  }
+
+  .middle-row{
+
+    display:flex;
+    gap:12px;
+  }
+
+  .mobile-controls button{
+
+    width:70px;
+    height:70px;
+
+    border:none;
+    border-radius:14px;
+
+    background:#2b2b2b;
+
+    color:white;
+
+    font-size:34px;
+    font-weight:bold;
+
+    touch-action:manipulation;
+  }
+
+  .mobile-controls button:active{
+
+    background:#555;
+  }
+
 }
