@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/maze-game",
+  trailingSlash: true,
 };
 
-export default nextConfig;
+module.exports = nextConfig;
