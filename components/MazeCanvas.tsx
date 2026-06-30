@@ -14,7 +14,7 @@ const IS_MOBILE =
   typeof window !== "undefined" &&
   window.innerWidth < 768;
 
-const CELL_SIZE = IS_MOBILE ? 34 : 24;
+const CELL_SIZE = IS_MOBILE ? 34 : 30;
 const VIEWPORT_WIDTH = 450
 const VIEWPORT_HEIGHT = 450;
 
