@@ -6,7 +6,7 @@ export default function Page() {
       <h1 style={{ color: "white", textAlign: "center" }}>
         Escape the Maze!
       </h1>
-      <h2 style={{ color: "white", textAlign: "center", fontSize: 12, marginBottom: 20 }}>
+      <h2 style={{ color: "white", textAlign: "center", fontSize: 12, marginBottom: 2}}>
         Use arrow keys to move, collect the key, and reach the exit.
       </h2>
       <MazeCanvas />
