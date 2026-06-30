@@ -21,9 +21,9 @@ const VIEWPORT_HEIGHT = 450;
 const MOVE_SPEED = 0.12;
 const MOVE_COOLDOWN = 90;
 
-const LIGHT_DEPTH = 10;
+const LIGHT_DEPTH = 6;
 
-const WALL_WIDTH = 7;
+const WALL_WIDTH = 8;
 const WALL_PADDING = 2;
 
 type Pos = {
