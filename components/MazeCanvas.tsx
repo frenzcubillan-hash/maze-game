@@ -10,9 +10,13 @@ import {
 const COLS = 30;
 const ROWS = 30;
 
-const CELL_SIZE = 24;
-const VIEWPORT_WIDTH = 600;
-const VIEWPORT_HEIGHT = 600;
+const IS_MOBILE =
+  typeof window !== "undefined" &&
+  window.innerWidth < 768;
+
+const CELL_SIZE = IS_MOBILE ? 34 : 24;
+const VIEWPORT_WIDTH = 450
+const VIEWPORT_HEIGHT = 450;
 
 const MOVE_SPEED = 0.12;
 const MOVE_COOLDOWN = 90;
