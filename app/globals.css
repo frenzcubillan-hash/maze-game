@@ -59,8 +59,8 @@ body{
 
   border:2px solid white;
 
-  width:min(95vw,600px);
-  height:min(95vw,600px);
+  width:min(95vw,650px);
+  height:min(95vw,550px);
 
   max-width:600px;
   max-height:600px;
