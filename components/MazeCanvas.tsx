@@ -249,7 +249,7 @@ function move(direction: "ArrowUp" | "ArrowDown" | "ArrowLeft" | "ArrowRight") {
         const px = x * CELL_SIZE;
         const py = y * CELL_SIZE;
 
-        ctx.fillStyle = visible ? "#313131" : "#000";
+        ctx.fillStyle = visible ? "#1a1a1a" : "#101010";
         ctx.fillRect(px, py, CELL_SIZE, CELL_SIZE);
 
         if (!visible) continue;
