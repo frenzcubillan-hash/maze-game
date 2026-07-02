@@ -442,21 +442,21 @@ function move(direction: "ArrowUp" | "ArrowDown" | "ArrowLeft" | "ArrowRight") {
     <div className="mobile-controls">
 
     <button onPointerDown={() => move("ArrowUp")}>
-        ▲
+      ↑
     </button>
 
     <div className="middle-row">
 
         <button onPointerDown={() => move("ArrowLeft")}>
-            ◀
+            ←
         </button>
 
         <button onPointerDown={() => move("ArrowDown")}>
-            ▼
+            ↓
         </button>
 
         <button onPointerDown={() => move("ArrowRight")}>
-            ▶
+            →
         </button>
 
     </div>
