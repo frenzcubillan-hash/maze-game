@@ -2,23 +2,13 @@ import MazeCanvas from "@/components/MazeCanvas";
 
 export default function Page() {
   return (
-    <main className="page-shell">
-      <div className="page-header">
-        <div className="hero-copy">
-          <p className="eyebrow">Maze Adventure</p>
-          <h1>Escape the Maze</h1>
-          <p className="subtitle">
-            Navigate the dark corridors, recover the hidden key, and reach the real exit.
-          </p>
-        </div>
-
-        <div className="instructions-card">
-          <strong>How to play</strong>
-          <p>Use arrow keys or on-screen controls to move.</p>
-          <p>Collect the key, then find the glowing exit to win.</p>
-        </div>
-      </div>
-
+    <main style={{ background: "black", height: "100vh", paddingTop: 20 }}>
+      <h1 style={{ color: "white", textAlign: "center" }}>
+        Escape the Maze!
+      </h1>
+      <h2 style={{ color: "white", textAlign: "center", fontSize: 12, marginBottom: 2}}>
+        Use arrow keys to move, collect the key, and reach the exit.
+      </h2>
       <MazeCanvas />
     </main>
   );
