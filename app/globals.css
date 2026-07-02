@@ -225,44 +225,62 @@ button:active{
 
 @media (max-width:768px){
 
-  .maze-wrapper{
+main{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    padding:10px 10px 20px;
+}
+
+h1{
+    font-size:30px;
+    text-align:center;
+    margin:0;
+}
+
+p{
+    text-align:center;
+    font-size:13px;
+
+    margin:4px 0 10px;
+}
+
+.maze-wrapper{
 
     width:100%;
 
-    border-radius:0;
+    padding:12px;
 
-    border:none;
+    border-radius:18px;
+}
 
-    padding:18px 22px;
+.maze-canvas{
 
-    background:none;
+    width:88vw;
 
-    box-shadow:none;
-  }
+    /* shorter than width */
+    height:60vw;
 
-  .maze-canvas{
+    max-width:430px;
+    max-height:290px;
+}
 
-    width:90vw;
+.ui{
 
-    height:58vw;
+    margin-top:10px;
 
-    max-width:none;
+    gap:10px;
 
-    max-height:420;
+    flex-wrap:wrap;
+}
 
-    border-width:6px;
-  }
-
-  .ui{
-
-    width:92vw;
-
-    gap:12px;
-
-    font-size:14px;
-  }
-
-  .mobile-controls{
+.mobile-controls{
 
     display:flex;
 
@@ -270,31 +288,31 @@ button:active{
 
     align-items:center;
 
-    margin-top:18px;
+    margin-top:15px;
 
-    gap:10px;
-  }
+    width:100%;
+}
 
-  .middle-row{
+.middle-row{
 
     display:flex;
 
-    gap:10px;
-  }
+    justify-content:center;
 
-  .mobile-controls button{
+    gap:12px;
 
-    width:72px;
+    width:100%;
+}
 
-    height:72px;
+.mobile-controls button{
 
-    padding:0;
+    width:68px;
+    height:68px;
 
-    font-size:32px;
+    font-size:28px;
 
     border-radius:18px;
-  }
-
+}
 }
 
 /* ==========================
