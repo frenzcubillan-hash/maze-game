@@ -21,21 +21,17 @@ body{
 
 body{
 
-  background:
-  radial-gradient(
-    circle at top,
-    #2B2622,
-    #1A1816 55%,
-    #121110
-  );
+    background:
+    radial-gradient(
+        circle at top,
+        #2B2622,
+        #1A1816 55%,
+        #121110
+    );
 
-  color:var(--foreground);
+    color:var(--foreground);
 
-  font-family:Arial,Helvetica,sans-serif;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 /* ==========================
@@ -113,7 +109,9 @@ body{
 
   gap:18px;
 
-  padding:14px 20px;
+  padding:10px 16px;
+
+  font-size:15px;
 
   background:#1D1A18;
 
@@ -235,7 +233,7 @@ button:active{
 
     border:none;
 
-    padding:16px;
+    padding:18px 22px;
 
     background:none;
 
@@ -244,13 +242,13 @@ button:active{
 
   .maze-canvas{
 
-    width:92vw;
+    width:90vw;
 
-    height:72vw;
+    height:58vw;
 
     max-width:none;
 
-    max-height:none;
+    max-height:420;
 
     border-width:6px;
   }
@@ -331,15 +329,18 @@ h2{
 ========================== */
 
 .game-page{
-  width:100%;
-  min-height:100vh;
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+    width:100%;
+    min-height:100vh;
 
-  padding:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding-top:24px;
+    padding-bottom:24px;
+
+    overflow:auto;
 }
 
 .subtitle{

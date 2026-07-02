@@ -16,7 +16,7 @@ const IS_MOBILE =
 
 const CELL_SIZE = IS_MOBILE ? 34 : 30;
 const VIEWPORT_WIDTH = 450
-const VIEWPORT_HEIGHT = 450;
+const VIEWPORT_HEIGHT = 360;
 
 const MOVE_SPEED = 0.12;
 const MOVE_COOLDOWN = 90;
