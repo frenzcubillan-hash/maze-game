@@ -1,20 +1,22 @@
 import MazeCanvas from "@/components/MazeCanvas";
-import { Cinzel } from "next/font/google";
+import { Cinzel_Decorative } from "next/font/google";
 
-const cinzel = Cinzel({
+const cinzel = Cinzel_Decorative({
   subsets: ["latin"],
   weight: ["700"],
 });
 
 export default function Page() {
   return (
-    <main style={{ background: "black", height: "100vh", paddingTop: 20 }}>
+    <main className="game-page">
       <h1 className={cinzel.className}>
-Escape the Maze
-</h1>
-      <p>
-        Use arrow keys to move, collect the key, and reach the exit.
+        Escape the Maze
+      </h1>
+
+      <p className="subtitle">
+        Find the hidden key and escape the labyrinth.
       </p>
+
       <MazeCanvas />
     </main>
   );

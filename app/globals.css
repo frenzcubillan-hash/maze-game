@@ -1,212 +1,225 @@
 @import "tailwindcss";
 
-:root {
-  --background: #000;
-  --foreground: #fff;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000;
-    --foreground: #fff;
-  }
+:root{
+  --background:#1A1816;
+  --foreground:#F5F0E7;
 }
 
 *{
+  margin:0;
+  padding:0;
   box-sizing:border-box;
 }
 
 html,
 body{
-  margin:0;
-  padding:0;
   width:100%;
   height:100%;
-  background:black;
   overflow:hidden;
   touch-action:none;
 }
 
 body{
 
-background:
+  background:
+  radial-gradient(
+    circle at top,
+    #2B2622,
+    #1A1816 55%,
+    #121110
+  );
 
-radial-gradient(circle at top,
+  color:var(--foreground);
 
-#2B2622,
+  font-family:Arial,Helvetica,sans-serif;
 
-#1A1816 55%,
-
-#121110);
-
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
+
+/* ==========================
+   MAZE CARD
+========================== */
 
 .maze-wrapper{
 
-    background:#25211E;
+  position:relative;
 
-    border:3px solid #5A452E;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 
-    border-radius:22px;
+  background:
+    linear-gradient(
+      180deg,
+      #2C2621,
+      #201B17
+    );
 
-    padding:25px;
+  border:4px solid #7A5C3A;
 
-    box-shadow:
+  border-radius:24px;
 
-        0 20px 60px rgba(0,0,0,.45),
+  padding:24px;
 
-        inset 0 0 30px rgba(255,255,255,.03);
-
+  box-shadow:
+      0 25px 60px rgba(0,0,0,.55),
+      inset 0 0 30px rgba(255,255,255,.03);
 }
+
+/* ==========================
+   MAZE CANVAS
+========================== */
 
 .maze-canvas{
 
-    display:block;
+  display:block;
 
-    background:#0B0B0B;
+  background:#0B0B0B;
 
-    border:6px solid #7A5C3A;
+  border:8px solid #7A5C3A;
 
-    border-radius:18px;
+  border-radius:18px;
 
-    box-shadow:
-        0 0 0 4px #3A3026,
-        0 15px 40px rgba(0,0,0,.55);
+  box-shadow:
+      inset 0 0 40px rgba(255,255,255,.02),
+      0 0 0 5px #3A3026,
+      0 15px 40px rgba(0,0,0,.6);
 
-    width:min(95vw,720px);
+  width:min(94vw,720px);
 
-    height:min(72vw,520px);
+  height:min(68vw,520px);
 
-    max-width:720px;
+  max-width:720px;
+  max-height:520px;
 
-    max-height:520px;
-
-    flex-shrink:0;
+  flex-shrink:0;
 }
 
-.ui button{
+/* ==========================
+   INFO BAR
+========================== */
 
-background:#8C6A3F;
+.ui{
 
-color:#F5F0E7;
+  margin-top:18px;
 
-border:none;
+  display:flex;
+  flex-wrap:wrap;
 
-padding:
+  justify-content:center;
+  align-items:center;
 
-12px 26px;
+  gap:18px;
 
-border-radius:12px;
+  padding:14px 20px;
 
-font-size:17px;
+  background:#1D1A18;
 
-font-weight:bold;
+  border:2px solid #4A3A2A;
 
-cursor:pointer;
+  border-radius:16px;
 
-transition:.18s;
-
-box-shadow:
-
-0 6px 0 #5D4324;
-
+  color:#F1E8D8;
 }
+
+/* ==========================
+   BUTTONS
+========================== */
+
+button{
+
+  cursor:pointer;
+
+  border:none;
+
+  outline:none;
+
+  color:#F5F0E7;
+
+  font-weight:bold;
+
+  font-size:16px;
+
+  padding:12px 24px;
+
+  border-radius:14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #9B7645,
+      #7A5C36
+    );
+
+  border:2px solid #B68C53;
+
+  box-shadow:
+      0 6px 0 #5C4326,
+      0 12px 18px rgba(0,0,0,.35);
+
+  transition:.15s;
+}
+
+button:hover{
+
+  transform:translateY(-2px);
+
+  background:
+    linear-gradient(
+      180deg,
+      #AF8650,
+      #886338
+    );
+}
+
+button:active{
+
+  transform:translateY(4px);
+
+  box-shadow:
+      0 2px 0 #5C4326;
+}
+
+/* ==========================
+   WIN SCREEN
+========================== */
 
 .win-overlay{
+
   position:absolute;
   inset:0;
 
   background:rgba(8,8,8,.92);
 
-backdrop-filter:blur(5px);
+  backdrop-filter:blur(6px);
 
   display:flex;
   flex-direction:column;
+
   justify-content:center;
   align-items:center;
 
   color:white;
-  font-size:32px;
 
-  z-index:50;
+  font-size:34px;
+
+  border-radius:20px;
+
+  z-index:100;
 }
 
 .win-overlay button{
 
-margin-top:20px;
+  margin-top:25px;
 
-font-size:20px;
-
-padding:14px 34px;
-
+  font-size:20px;
 }
 
-.ui button:hover{
-
-background:#A17B46;
-
-transform:translateY(-2px);
-
-}
-
-.ui button:active{
-
-transform:translateY(4px);
-
-box-shadow:
-
-0 2px 0 #5D4324;
-
-}
-
-@media (max-width:700px){
-
-  .maze-canvas{
-
-    width:95vw;
-    height:95vw;
-
-    max-width:95vw;
-    max-height:95vw;
-  }
-
-  .ui{
-
-background:#1D1A18;
-
-padding:14px 18px;
-
-border-radius:16px;
-
-border:2px solid #4A3A2A;
-
-margin-top:18px;
-
-display:flex;
-
-gap:20px;
-
-align-items:center;
-
-justify-content:center;
-
-color:#F1E8D8;
-
-}
-
-  button{
-
-    font-size:15px;
-  }
-
-}
-/* =========================
+/* ==========================
    MOBILE CONTROLS
-   ========================= */
-
-.mobile-controls{
-  display:none;
-}
+========================== */
 
 .mobile-controls{
   display:none;
@@ -214,84 +227,125 @@ color:#F1E8D8;
 
 @media (max-width:768px){
 
+  .maze-wrapper{
+
+    width:100%;
+
+    border-radius:0;
+
+    border:none;
+
+    padding:16px;
+
+    background:none;
+
+    box-shadow:none;
+  }
+
   .maze-canvas{
 
-    width:82vw;
-    height:82vw;
+    width:92vw;
 
-    max-width:82vw;
-    max-height:82vw;
+    height:72vw;
+
+    max-width:none;
+
+    max-height:none;
+
+    border-width:6px;
+  }
+
+  .ui{
+
+    width:92vw;
+
+    gap:12px;
+
+    font-size:14px;
   }
 
   .mobile-controls{
 
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
 
-    margin-top:14px;
+    margin-top:18px;
 
     gap:10px;
-
-    width:100%;
   }
 
   .middle-row{
 
     display:flex;
-    justify-content:center;
+
     gap:10px;
   }
 
   .mobile-controls button{
 
-background:#3A3026;
+    width:72px;
 
-border:2px solid #8C6A3F;
+    height:72px;
 
-color:#F5F0E7;
+    padding:0;
 
-border-radius:16px;
+    font-size:32px;
 
-box-shadow:
-
-0 6px 0 #241A11;
-
-transition:.15s;
-
-}
-.mobile-controls button:active{
-
-transform:translateY(3px);
-
-background:#8C6A3F;
+    border-radius:18px;
+  }
 
 }
 
-}
+/* ==========================
+   TITLES
+========================== */
 
 h1{
 
-font-size:52px;
+  font-size:50px;
 
-letter-spacing:2px;
+  letter-spacing:2px;
 
-color:#F3E5C7;
+  color:#F3E5C7;
 
-margin-bottom:6px;
+  text-shadow:
+      0 4px 10px rgba(0,0,0,.45);
 
-text-shadow:
-
-0 4px 10px rgba(0,0,0,.5);
-
+  margin-bottom:6px;
 }
 
-p{
+h2{
 
-color:#BCA98B;
+  color:#BCA98B;
 
-font-size:15px;
+  font-weight:normal;
 
-margin-bottom:20px;
+  margin-bottom:18px;
+}
 
+/* ==========================
+   PAGE LAYOUT
+========================== */
+
+.game-page{
+  width:100%;
+  min-height:100vh;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  padding:30px;
+}
+
+.subtitle{
+  color:#BCA98B;
+  font-size:16px;
+  margin-bottom:24px;
+  text-align:center;
+  max-width:500px;
 }
